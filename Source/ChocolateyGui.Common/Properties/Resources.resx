@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -477,7 +477,7 @@ Or if there is a traditional way to show sorting by the Title in your language, 
     <value>搜索</value>
   </data>
   <data name="Resources_ThisPC" xml:space="preserve">
-    <value>这个PC</value>
+    <value>已安装</value>
   </data>
   <data name="SettingsViewModel_DisplayName" xml:space="preserve">
     <value>Chocolatey GUI - 设置</value>
