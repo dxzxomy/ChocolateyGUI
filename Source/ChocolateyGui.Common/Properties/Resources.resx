@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -118,124 +118,124 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Bootstrapper_UnhandledException" xml:space="preserve">
-    <value>Unhandled Exception</value>
+    <value>未处理的异常</value>
   </data>
   <data name="ChocolateyCustomSchemeProvider_InvalidHtml" xml:space="preserve">
-    <value>&lt;h3&gt;Invalid HTML String&lt;/h3&gt;</value>
+    <value>&lt;h3&gt;无效的HTML字符串&lt;/h3&gt;</value>
   </data>
   <data name="ChocolateyCustomSchemeProvider_UnknownHost" xml:space="preserve">
-    <value>&lt;h1&gt;Unknown Host&lt;/h1&gt;</value>
+    <value>&lt;h1&gt;未知的主机&lt;/h1&gt;</value>
   </data>
   <data name="ChocolateyDialog_ConsoleOutput" xml:space="preserve">
-    <value>Console Output</value>
+    <value>通过控制台输出</value>
   </data>
   <data name="ChocolateyRemotePackageService_ExceptionFormat" xml:space="preserve">
     <value>
-Exception: {0}</value>
+例外{0}</value>
     <comment>{0} = The Exception message that is associated with the error that is currently being thrown.</comment>
   </data>
   <data name="ChocolateyRemotePackageService_InstallFailedMessage" xml:space="preserve">
-    <value>Failed to install package "{0}", version "{1}".
-Error: {2}{3}</value>
+    <value>无法安装包“{0}”，版本“{1}”。
+错误：{2}{3}</value>
     <comment>{0} = The name of the package that failed to install
 {1} = The version of the package that failed to install
 {2} = A collection of messages returned from Chocolatey
 {3} = The message of the exception that is being thrown</comment>
   </data>
   <data name="ChocolateyRemotePackageService_InstallFailedTitle" xml:space="preserve">
-    <value>Failed to install package.</value>
+    <value>无法安装包。</value>
   </data>
   <data name="ChocolateyRemotePackageService_PinFailedMessage" xml:space="preserve">
-    <value>Failed to pin package "{0}", version "{1}".
-Error: {2}{3}</value>
+    <value>无法锁定包“{0}”，版本“{1}”。
+错误：{2}{3}</value>
     <comment>{0} = The name of the package that failed to pin
 {1} = The version of the package that failed to pin
 {2} = A collection of messages returned from Chocolatey
 {3} = The message of the exception that is being thrown</comment>
   </data>
   <data name="ChocolateyRemotePackageService_PinFailedTitle" xml:space="preserve">
-    <value>Failed to pin package.</value>
+    <value>无法锁定包。</value>
   </data>
   <data name="ChocolateyRemotePackageService_UninstallFailedMessage" xml:space="preserve">
-    <value>Failed to uninstall package "{0}", version "{1}".
-Error: {2}{3}</value>
+    <value>无法卸载包“{0}”，版本“{1}”。
+错误：{2}{3}</value>
     <comment>{0} = The name of the package that failed to uninstall
 {1} = The version of the package that failed to uninstall
 {2} = A collection of messages returned from Chocolatey
 {3} = The message of the exception that is being thrown</comment>
   </data>
   <data name="ChocolateyRemotePackageService_UninstallFailedTitle" xml:space="preserve">
-    <value>Failed to uninstall package.</value>
+    <value>无法卸载包。</value>
   </data>
   <data name="ChocolateyRemotePackageService_UnpinFailedMessage" xml:space="preserve">
-    <value>Failed to unpin package "{0}", version "{1}".
-Error {2}{3}</value>
+    <value>无法解锁包“{0}”，版本“{1}”。
+错误：{2}{3}</value>
     <comment>{0} = The name of the package that failed to unpin
 {1} = The version of the package that failed to unpin
 {2} = A collection of messages returned from Chocolatey
 {3} = The message of the exception that is being thrown</comment>
   </data>
   <data name="ChocolateyRemotePackageService_UnpinFailedTitle" xml:space="preserve">
-    <value>Failed to unpin package.</value>
+    <value>无法解锁包。</value>
   </data>
   <data name="ChocolateyRemotePackageService_UpdateFailedMessage" xml:space="preserve">
-    <value>Failed to update package "{0}".
-Error: {1}{2}</value>
+    <value>无法更新包“{0}”。
+错误：{1}{2}</value>
     <comment>{0} = The name of the package that failed to update
 {1} = A collection of messages returned from Chocolatey
 {2} = The message of the exception that is being thrown</comment>
   </data>
   <data name="ChocolateyRemotePackageService_UpdateFailedTitle" xml:space="preserve">
-    <value>Failed to update package.</value>
+    <value>无法更新包。</value>
   </data>
   <data name="Controls_PackageListByAuthor" xml:space="preserve">
-    <value>By: </value>
+    <value>作者：</value>
   </data>
   <data name="Controls_PackageListDownloads" xml:space="preserve">
-    <value>downloads</value>
+    <value>下载</value>
   </data>
   <data name="Controls_PackageListTags" xml:space="preserve">
-    <value>Tags:</value>
+    <value>标签：</value>
   </data>
   <data name="Controls_PackagesContextMenuDetails" xml:space="preserve">
-    <value>Details</value>
+    <value>详细资料</value>
   </data>
   <data name="Controls_PackagesContextMenuInstall" xml:space="preserve">
-    <value>Install</value>
+    <value>安装</value>
   </data>
   <data name="Controls_PackagesContextMenuPin" xml:space="preserve">
     <value>Pin (Ignore Updates)</value>
   </data>
   <data name="Controls_PackagesContextMenuReinstall" xml:space="preserve">
-    <value>Reinstall</value>
+    <value>重新安装</value>
   </data>
   <data name="Controls_PackagesContextMenuUninstall" xml:space="preserve">
-    <value>Uninstall</value>
+    <value>卸载</value>
   </data>
   <data name="Controls_PackagesContextMenuUnpin" xml:space="preserve">
-    <value>Unpin</value>
+    <value>解锁</value>
   </data>
   <data name="Controls_PackagesContextMenuUpdate" xml:space="preserve">
-    <value>Update</value>
+    <value>更新</value>
   </data>
   <data name="LocalSourceViewModel_Chocolatey" xml:space="preserve">
     <value>Chocolatey</value>
   </data>
   <data name="LocalSourceViewModel_ConfigFiles" xml:space="preserve">
-    <value>Config Files {0}</value>
+    <value>配置文件{0}</value>
     <comment>{0} = Is equal to (.config)|*.config</comment>
   </data>
   <data name="LocalSourceViewModel_Packages" xml:space="preserve">
-    <value>Packages</value>
+    <value>包</value>
   </data>
   <data name="LocalSourceViewModel_UpdateAvailableForChocolatey" xml:space="preserve">
-    <value>There's an update available for Chocolatey.</value>
+    <value>Chocolatey有更新。</value>
   </data>
   <data name="LocalSourceView_ButtonExport" xml:space="preserve">
-    <value>Export</value>
+    <value>导出</value>
   </data>
   <data name="LocalSourceView_ButtonRefreshPkgs" xml:space="preserve">
-    <value>Refresh Packages</value>
+    <value>刷新包</value>
   </data>
   <data name="LocalSourceView_ButtonCheckForOutdatedPkgs" xml:space="preserve">
     <value>Check for outdated packages (forced)</value>
@@ -244,190 +244,190 @@ Error: {1}{2}</value>
     <value>Check for outdated packages (forced)</value>
   </data>
   <data name="LocalSourceView_ButtonUpdateAll" xml:space="preserve">
-    <value>Update All</value>
+    <value>全部更新</value>
   </data>
   <data name="LocalSourceView_CheckboxMatchExact" xml:space="preserve">
-    <value>Match Word Exactly</value>
+    <value>准确匹配单词</value>
   </data>
   <data name="LocalSourceView_CheckboxPkgsWithUpdates" xml:space="preserve">
-    <value>Show Only Packages with Updates</value>
+    <value>仅显示带有更新的包</value>
   </data>
   <data name="LocalSourceView_Grid_Authors" xml:space="preserve">
-    <value>Authors</value>
+    <value>作者</value>
   </data>
   <data name="LocalSourceView_Grid_LatestVersion" xml:space="preserve">
-    <value>Latest Version</value>
+    <value>最新版本</value>
   </data>
   <data name="LocalSourceView_Grid_Name" xml:space="preserve">
-    <value>Name</value>
+    <value>名称</value>
   </data>
   <data name="LocalSourceView_Grid_Version" xml:space="preserve">
-    <value>Version</value>
+    <value>版本</value>
   </data>
   <data name="LocalSourceView_SearchBoxText" xml:space="preserve">
-    <value>Search:</value>
+    <value>搜索：</value>
   </data>
   <data name="PackageViewModel_DisplayName" xml:space="preserve">
-    <value>Package - {0}</value>
+    <value>包 - {0}</value>
     <comment>{0} = Package Title</comment>
   </data>
   <data name="PackageViewModel_FailedToInstall" xml:space="preserve">
-    <value>Failed to install</value>
+    <value>安装失败</value>
   </data>
   <data name="PackageViewModel_FailedToPin" xml:space="preserve">
-    <value>Failed to Pin</value>
+    <value>无法锁定</value>
   </data>
   <data name="PackageViewModel_FailedToReinstall" xml:space="preserve">
-    <value>Failed to Reinstall</value>
+    <value>无法重新安装</value>
   </data>
   <data name="PackageViewModel_FailedToUninstall" xml:space="preserve">
-    <value>Failed to Uninstall</value>
+    <value>无法卸载</value>
   </data>
   <data name="PackageViewModel_FailedToUnpin" xml:space="preserve">
-    <value>Failed to Unpin</value>
+    <value>无法解锁</value>
   </data>
   <data name="PackageViewModel_FailedToUpdate" xml:space="preserve">
-    <value>Failed to Update</value>
+    <value>无法更新</value>
   </data>
   <data name="PackageViewModel_InstallingPackage" xml:space="preserve">
-    <value>Installing package</value>
+    <value>安装包</value>
   </data>
   <data name="PackageViewModel_LoadingPackageInfo" xml:space="preserve">
-    <value>Loading package information...</value>
+    <value>正在加载包信息...</value>
   </data>
   <data name="PackageViewModel_PinningPackage" xml:space="preserve">
-    <value>Pinning package</value>
+    <value>锁定包</value>
   </data>
   <data name="PackageViewModel_RanIntoInstallError" xml:space="preserve">
-    <value>Ran into an error while installing {0}.
+    <value>安装时遇到错误 {0}。
 {1}</value>
     <comment>{0} = The package Id
 {1} = The exception message</comment>
   </data>
   <data name="PackageViewModel_RanIntoPinningError" xml:space="preserve">
-    <value>Ran into an error while pinning {0}.
+    <value>锁定时遇到错误 {0}。
 {1}</value>
     <comment>{0} = The package Id
 {1} = The exception message</comment>
   </data>
   <data name="PackageViewModel_RanIntoReinstallError" xml:space="preserve">
-    <value>Ran into an error while reinstalling {0}.
+    <value>重新安装时遇到错误 {0}。
 {1}</value>
     <comment>{0} = The package Id
 {1} = The exception message</comment>
   </data>
   <data name="PackageViewModel_RanIntoUninstallError" xml:space="preserve">
-    <value>Ran into an error while uninstalling {0}.
+    <value>卸载时遇到错误 {0}。
 {1}</value>
     <comment>{0} = The package Id
 {1} = The exception message</comment>
   </data>
   <data name="PackageViewModel_RanIntoUnpinError" xml:space="preserve">
-    <value>Ran into an error while unpinning {0}.
+    <value>解锁时遇到错误 {0}。
 {1}</value>
     <comment>{0} = The package Id
 {1} = The exception message</comment>
   </data>
   <data name="PackageViewModel_RanIntoUpdateError" xml:space="preserve">
-    <value>Ran into an error while updating {0}.
+    <value>更新时遇到错误 {0}。
 {1}</value>
     <comment>{0} = The package Id
 {1} = The exception message</comment>
   </data>
   <data name="PackageViewModel_ReinstallingPackage" xml:space="preserve">
-    <value>Reinstalling package</value>
+    <value>重新安装软件包</value>
   </data>
   <data name="PackageViewModel_StartLoadingFormat" xml:space="preserve">
-    <value>{0} {1}...</value>
+    <value>{0}{1}...</value>
     <comment>{0} = The command text
 {1} = The package id
 NOTE: Probably only necessary to change in RTL languages.</comment>
   </data>
   <data name="PackageViewModel_UninstallingPackage" xml:space="preserve">
-    <value>Uninstalling package</value>
+    <value>正在卸载包</value>
   </data>
   <data name="PackageViewModel_UnpinningPackage" xml:space="preserve">
-    <value>Unpinning package</value>
+    <value>解锁包</value>
   </data>
   <data name="PackageViewModel_UpdatingPackage" xml:space="preserve">
-    <value>Updating package</value>
+    <value>更新包</value>
   </data>
   <data name="PackageView_Authors" xml:space="preserve">
-    <value>Authors:</value>
+    <value>作者：</value>
   </data>
   <data name="PackageView_ButtonInstall" xml:space="preserve">
-    <value>Install</value>
+    <value>安装</value>
   </data>
   <data name="PackageView_ButtonPin" xml:space="preserve">
     <value>Pin (Ignore Updates)</value>
   </data>
   <data name="PackageView_ButtonReinstall" xml:space="preserve">
-    <value>Reinstall</value>
+    <value>重新安装</value>
   </data>
   <data name="PackageView_ButtonUninstall" xml:space="preserve">
-    <value>Uninstall</value>
+    <value>卸载</value>
   </data>
   <data name="PackageView_ButtonUnpin" xml:space="preserve">
-    <value>Unpin</value>
+    <value>解锁</value>
   </data>
   <data name="PackageView_ButtonUpdate" xml:space="preserve">
-    <value>Update</value>
+    <value>更新</value>
   </data>
   <data name="PackageView_Dependencies" xml:space="preserve">
-    <value>Dependencies</value>
+    <value>依赖</value>
   </data>
   <data name="PackageView_Description" xml:space="preserve">
-    <value>Description</value>
+    <value>描述</value>
   </data>
   <data name="PackageView_Downloads" xml:space="preserve">
-    <value>Downloads</value>
+    <value>下载</value>
   </data>
   <data name="PackageView_Gallery" xml:space="preserve">
-    <value>Gallery</value>
+    <value>库</value>
   </data>
   <data name="PackageView_LastUpdate" xml:space="preserve">
-    <value>Last update</value>
+    <value>上次更新</value>
   </data>
   <data name="PackageView_License" xml:space="preserve">
-    <value>License</value>
+    <value>许可证</value>
   </data>
   <data name="PackageView_Maintainers" xml:space="preserve">
-    <value> | Maintainers: </value>
+    <value>| 维护者：</value>
   </data>
   <data name="PackageView_PackageID" xml:space="preserve">
-    <value>Package ID</value>
+    <value>包ID</value>
   </data>
   <data name="PackageView_PackageSize" xml:space="preserve">
-    <value>Package Size</value>
+    <value>包大小</value>
   </data>
   <data name="PackageView_ProjectSite" xml:space="preserve">
-    <value>Project Site</value>
+    <value>项目地址</value>
   </data>
   <data name="PackageView_ReleaseNotes" xml:space="preserve">
-    <value>Release Notes</value>
+    <value>发行说明</value>
   </data>
   <data name="PackageView_ReportAbuse" xml:space="preserve">
-    <value>Report Abuse</value>
+    <value>举报滥用</value>
   </data>
   <data name="PackageView_Summary" xml:space="preserve">
-    <value>Summary</value>
+    <value>概要</value>
   </data>
   <data name="PackageView_TotalDownloads" xml:space="preserve">
-    <value>Total Downloads</value>
+    <value>下载总数</value>
   </data>
   <data name="RemoteSourceViewModel_FailedToLoad" xml:space="preserve">
-    <value>Failed to Load</value>
+    <value>加载失败</value>
   </data>
   <data name="RemoteSourceViewModel_FailedToLoadRemotePackages" xml:space="preserve">
-    <value>Failed to load remote packages!
+    <value>无法加载远程包！
 {0}</value>
     <comment>{0} = The exception message that occured</comment>
   </data>
   <data name="RemoteSourceViewModel_FeedSearchError" xml:space="preserve">
-    <value>Feed Search Error</value>
+    <value>Feed搜索错误</value>
   </data>
   <data name="RemoteSourceViewModel_LoadingPage" xml:space="preserve">
-    <value>Loading page {0}...</value>
+    <value>加载页面 {0}...</value>
     <comment>{0} = The page that is loading</comment>
   </data>
   <data name="RemoteSourceViewModel_SortSelectionAtoZ" xml:space="preserve">
@@ -437,254 +437,254 @@ and the letter 'Z' to the last letter in your alphabet.
 Or if there is a traditional way to show sorting by the Title in your language, that should be used instead.</comment>
   </data>
   <data name="RemoteSourceViewModel_SortSelectionPopularity" xml:space="preserve">
-    <value>Popularity</value>
+    <value>流行</value>
   </data>
   <data name="RemoteSourceViewModel_UnableToConnectToFeed" xml:space="preserve">
-    <value>Unable to connect to feed with Source: {0}.  Please check that this feed is accessible, and try again.</value>
+    <value>无法连接到源为的源：{0}。请检查此源是否可访问，然后重试。</value>
     <comment>{0} = The URL of the source that isn't accessible</comment>
   </data>
   <data name="RemoteSourceView_Authors" xml:space="preserve">
-    <value>Authors:</value>
+    <value>作者：</value>
   </data>
   <data name="RemoteSourceView_ButtonGoBackAPage" xml:space="preserve">
     <value>Back</value>
   </data>
   <data name="RemoteSourceView_ButtonGoForwardAPage" xml:space="preserve">
-    <value>Next</value>
+    <value>下一页</value>
   </data>
   <data name="RemoteSourceView_ButtonGotoFirstPage" xml:space="preserve">
     <value>First</value>
   </data>
   <data name="RemoteSourceView_ButtonGotoLastPage" xml:space="preserve">
-    <value>Last</value>
+    <value>最后</value>
   </data>
   <data name="RemoteSourceView_ButtonRefreshPkgs" xml:space="preserve">
-    <value>Refresh Packages</value>
+    <value>刷新包</value>
   </data>
   <data name="RemoteSourceView_CheckboxAllVersions" xml:space="preserve">
-    <value>All Versions</value>
+    <value>所有版本</value>
   </data>
   <data name="RemoteSourceView_CheckboxIncludePrerelease" xml:space="preserve">
-    <value>Include Prerelease</value>
+    <value>包括预发布</value>
   </data>
   <data name="RemoteSourceView_CheckboxMatchExactly" xml:space="preserve">
-    <value>Match Word Exactly</value>
+    <value>准确匹配单词</value>
   </data>
   <data name="RemoteSourceView_Downloads" xml:space="preserve">
-    <value>downloads</value>
+    <value>下载</value>
   </data>
   <data name="RemoteSourceView_SearchBoxText" xml:space="preserve">
-    <value>Search:</value>
+    <value>搜索</value>
   </data>
   <data name="Resources_ThisPC" xml:space="preserve">
-    <value>This PC</value>
+    <value>这个PC</value>
   </data>
   <data name="SettingsViewModel_DisplayName" xml:space="preserve">
-    <value>Chocolatey GUI - Settings</value>
+    <value>Chocolatey GUI - 设置</value>
   </data>
   <data name="SettingsViewModel_FeatureFailedToUpdate" xml:space="preserve">
-    <value>Failed to update features. Error:
+    <value>无法更新功能。错误：
 {0}</value>
     <comment>{0} = The exception arguments</comment>
   </data>
   <data name="SettingsViewModel_FeatureUpdatesError" xml:space="preserve">
-    <value>Feature Updates Error</value>
+    <value>功能更新错误</value>
   </data>
   <data name="SettingsViewModel_RemovingSource" xml:space="preserve">
-    <value>Removing source...</value>
+    <value>移除源...</value>
   </data>
   <data name="SettingsViewModel_SavingSource" xml:space="preserve">
-    <value>Saving Source</value>
+    <value>保存源</value>
   </data>
   <data name="SettingsViewModel_SavingSourceLoading" xml:space="preserve">
-    <value>Saving source...</value>
+    <value>保存源...</value>
   </data>
   <data name="SettingsViewModel_SourceMissingId" xml:space="preserve">
-    <value>Source must have an Id!</value>
+    <value>来源必须有一个标识！</value>
   </data>
   <data name="SettingsViewModel_SourceMissingValue" xml:space="preserve">
-    <value>Source must have an value!</value>
+    <value>源必须有值！</value>
   </data>
   <data name="AboutView_About" xml:space="preserve">
-    <value>About</value>
+    <value>关于</value>
   </data>
   <data name="SettingsView_ButtonCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="SettingsView_ButtonNew" xml:space="preserve">
-    <value>New</value>
+    <value>新建</value>
   </data>
   <data name="SettingsView_ButtonRemove" xml:space="preserve">
-    <value>Remove</value>
+    <value>取消</value>
   </data>
   <data name="SettingsView_ButtonSave" xml:space="preserve">
-    <value>Save</value>
+    <value>保存</value>
   </data>
   <data name="SettingsView_ChocolateyGui" xml:space="preserve">
     <value>Chocolatey GUI</value>
   </data>
   <data name="AboutView_Credits" xml:space="preserve">
-    <value>Credits</value>
+    <value>积分</value>
   </data>
   <data name="SettingsView_Features" xml:space="preserve">
-    <value>Features</value>
+    <value>特征</value>
   </data>
   <data name="SettingsView_Off" xml:space="preserve">
-    <value>Off</value>
+    <value>关</value>
   </data>
   <data name="SettingsView_On" xml:space="preserve">
-    <value>On</value>
+    <value>开</value>
   </data>
   <data name="SettingsView_Options" xml:space="preserve">
-    <value>Options</value>
+    <value>选项</value>
   </data>
   <data name="SettingsView_PropertyDescription" xml:space="preserve">
-    <value>Description</value>
+    <value>描述</value>
   </data>
   <data name="SettingsView_PropertyName" xml:space="preserve">
-    <value>Name</value>
+    <value>名称</value>
   </data>
   <data name="SettingsView_PropertyValue" xml:space="preserve">
-    <value>Value</value>
+    <value>值</value>
   </data>
   <data name="AboutView_ReleaseNotes" xml:space="preserve">
-    <value>Release Notes</value>
+    <value>发行说明</value>
   </data>
   <data name="SettingsView_Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>设置</value>
   </data>
   <data name="SettingsView_Sources" xml:space="preserve">
-    <value>Sources</value>
+    <value>源</value>
   </data>
   <data name="SettingsView_SourcesCertificate" xml:space="preserve">
-    <value>Certificate</value>
+    <value>证书</value>
   </data>
   <data name="SettingsView_SourcesCertificatePass" xml:space="preserve">
-    <value>Certificate Pass</value>
+    <value>证书通行证</value>
   </data>
   <data name="SettingsView_SourcesDisabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>禁用</value>
   </data>
   <data name="SettingsView_SourcesId" xml:space="preserve">
-    <value>Id</value>
+    <value>标识</value>
   </data>
   <data name="SettingsView_SourcesIsDisabled" xml:space="preserve">
-    <value>Is Disabled</value>
+    <value>已禁用</value>
   </data>
   <data name="SettingsView_SourcesPassword" xml:space="preserve">
-    <value>Password</value>
+    <value>密码</value>
   </data>
   <data name="SettingsView_SourcesPath" xml:space="preserve">
-    <value>Path</value>
+    <value>路径</value>
   </data>
   <data name="SettingsView_SourcesPriority" xml:space="preserve">
-    <value>Priority</value>
+    <value>优先</value>
   </data>
   <data name="SettingsView_SourcesSource" xml:space="preserve">
-    <value>Source</value>
+    <value>资源</value>
   </data>
   <data name="SettingsView_SourcesUsername" xml:space="preserve">
-    <value>Username</value>
+    <value>用户名</value>
   </data>
   <data name="SettingsView_Chocolatey" xml:space="preserve">
     <value>Chocolatey</value>
   </data>
   <data name="SettingsView_ToggleShowConsoleOutputDescription" xml:space="preserve">
-    <value>Shows output from the commands being executed when a job is running.</value>
+    <value>显示工作运行时正在执行命令输出。</value>
   </data>
   <data name="ShellView_ButtonAbout" xml:space="preserve">
-    <value>about</value>
+    <value>关于</value>
   </data>
   <data name="ShellView_ButtonSettings" xml:space="preserve">
-    <value>settings</value>
+    <value>设置</value>
   </data>
   <data name="SourcesView_Choco" xml:space="preserve">
-    <value>chocolatey</value>
+    <value>Chocolatey</value>
   </data>
   <data name="VersionNumberProvider_VersionFormat" xml:space="preserve">
-    <value>Version: {0}</value>
+    <value>版本：{0}</value>
     <comment>{0} = The Informational Version Number of the Assembly that is currently being executed</comment>
   </data>
   <data name="SettingsView_SourcesBypassProxy" xml:space="preserve">
-    <value>Bypass Proxy</value>
+    <value>绕过代理</value>
   </data>
   <data name="SettingsView_SourcesSelfService" xml:space="preserve">
-    <value>Self Service</value>
+    <value>自助服务</value>
   </data>
   <data name="SettingsView_SourcesIsBypassProxy" xml:space="preserve">
-    <value>Is Proxy Bypassed</value>
+    <value>是否已绕过代理</value>
   </data>
   <data name="SettingsView_SourcesIsSelfService" xml:space="preserve">
-    <value>Is Self Service</value>
+    <value>是自助服务</value>
   </data>
   <data name="SettingsView_SourcesAdminOnly" xml:space="preserve">
-    <value>Admin Only</value>
+    <value>管理员仅限</value>
   </data>
   <data name="SettingsView_SourcesIsAdminOnly" xml:space="preserve">
-    <value>Visible to Admins Only</value>
+    <value>仅对管理员可见</value>
   </data>
   <data name="General_UnauthorisedException_Description" xml:space="preserve">
-    <value>You may not have the appropriate permissions to perform this action.</value>
+    <value>您可能没有执行此操作的适当权限。</value>
   </data>
   <data name="General_UnauthorisedException_Title" xml:space="preserve">
-    <value>Unable to perform action</value>
+    <value>无法执行操作</value>
   </data>
   <data name="LocalSourceViewModel_FetchingPackages" xml:space="preserve">
-    <value>Fetching packages...</value>
+    <value>获取包..</value>
   </data>
   <data name="RemoteSourceViewModel_FetchingPackages" xml:space="preserve">
-    <value>Fetching packages...</value>
+    <value>获取包..</value>
   </data>
   <data name="LocalSourceView_ToolTip_InstalledSideBySide" xml:space="preserve">
-    <value>Installed Side by Side with another version of the same package.</value>
+    <value>安装同一程序包的另一个版本。</value>
   </data>
   <data name="LocalSourceView_ToolTip_Pinned" xml:space="preserve">
-    <value>Pinned</value>
+    <value>锁定</value>
   </data>
   <data name="LocalSourceView_ButtonListView" xml:space="preserve">
-    <value>List View</value>
+    <value>列表视图</value>
   </data>
   <data name="LocalSourceView_ButtonTileView" xml:space="preserve">
-    <value>Tile View</value>
+    <value>平铺视图</value>
   </data>
   <data name="LocalSourceView_Outdated" xml:space="preserve">
-    <value>Out Of Date</value>
+    <value>过期的</value>
   </data>
   <data name="RemoteSourceView_ButtonListView" xml:space="preserve">
-    <value>List View</value>
+    <value>列表视图</value>
   </data>
   <data name="RemoteSourceView_ButtonTileView" xml:space="preserve">
-    <value>Tile View</value>
+    <value>平铺视图</value>
   </data>
   <data name="RemoteSourceView_OverlayOutdated" xml:space="preserve">
-    <value>Out Of Date</value>
+    <value>过期的</value>
   </data>
   <data name="RemoteSourceView_OverlayInstalled" xml:space="preserve">
-    <value>Installed</value>
+    <value>安装</value>
   </data>
   <data name="SettingsView_ToggleDefaultTileViewLocalDescription" xml:space="preserve">
-    <value>Default to tile instead of list view. It is still possible to switch during use.</value>
+    <value>默认为平铺视图，而不是列表视图。在使用过程中仍然可以切换。</value>
   </data>
   <data name="SettingsView_ToggleDefaultTileViewRemoteDescription" xml:space="preserve">
-    <value>Default to tile instead of list view. It is still possible to switch during use.</value>
+    <value>默认为平铺视图，而不是列表视图。在使用过程中仍然可以切换。</value>
   </data>
   <data name="SettingsView_ToggleUseDelayedSearchDescription" xml:space="preserve">
-    <value>Enables live search, which returns results after a short delay without clicking the search button.</value>
+    <value>启用实时搜索，它会在短暂延迟后返回结果，而无需单击搜索按钮。</value>
   </data>
   <data name="PackageView_Version" xml:space="preserve">
-    <value>Version</value>
+    <value>版本</value>
   </data>
   <data name="AboutView_History" xml:space="preserve">
-    <value>History</value>
+    <value>历史</value>
   </data>
   <data name="SettingsView_ToggleExcludeInstalledPackages" xml:space="preserve">
-    <value>Exclude installed packages</value>
+    <value>排除已安装的包</value>
   </data>
   <data name="SettingsView_ToggleExcludeInstalledPackagesDescription" xml:space="preserve">
-    <value>Do not show packages that are already installed when viewing sources.</value>
+    <value>查看源时，请勿显示已安装的软件包。</value>
   </data>
   <data name="SettingsView_ToggleShowAggregatedSourceViewDescription" xml:space="preserve">
-    <value>Show additional source combining all sources in one place.</value>
+    <value>在一个地方显示所有源。</value>
   </data>
   <data name="SettingsView_TogglePreventPreloadDescription" xml:space="preserve">
     <value>Prevents preloading results with a blank search when opening the remote source view.</value>
@@ -693,49 +693,48 @@ Or if there is a traditional way to show sorting by the Title in your language, 
     <value>Prevents automated check for outdated packages on local and remote source views.</value>
   </data>
   <data name="SourcesView_AggregatedSourcesId" xml:space="preserve">
-    <value>All Sources</value>
+    <value>所有源</value>
   </data>
   <data name="ChocolateyDialog_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="ChocolateyDialog_OK" xml:space="preserve">
-    <value>OK</value>
+    <value>确定</value>
   </data>
   <data name="Command_CommandsListText" xml:space="preserve">
-    <value>This is a listing of all of the different things you can pass to {0}.</value>
+    <value>这个列表传递所有不同的东西{0}。</value>
     <comment>{0} = Is equal to 'chocolateyguicli'</comment>
   </data>
   <data name="Command_CommandsText" xml:space="preserve">
-    <value>Please run {0} with '{0} -?' or '{0} &lt;command&gt; -?' for specific help on each command</value>
+    <value>请运行{0}with '{0} -?' or '{0}&lt;command&gt; -?' 有关每个命令的特定帮助</value>
     <comment>{0} = Is equal to 'chocolateyguicli'</comment>
   </data>
   <data name="Command_CommandsTitle" xml:space="preserve">
-    <value>Commands</value>
+    <value>命令</value>
   </data>
   <data name="Command_DefaultOptionsAndSwitches" xml:space="preserve">
-    <value>Default Options and Switches</value>
+    <value>默认选项和开关</value>
   </data>
   <data name="Command_Examples" xml:space="preserve">
-    <value>Examples</value>
+    <value>范例</value>
   </data>
   <data name="Command_ExitCodesText" xml:space="preserve">
-    <value>Exit codes that normally result from running this command.
+    <value>运行此命令而导正常：
 
-Normal:
- - 0: operation was successful, no issues detected
- - -1 or 1: an error has occurred</value>
+ -0: 操作成功, 未检测到问题
+ --1 或 1: 发生错误致的退出代码</value>
   </data>
   <data name="Command_ExitCodesTitle" xml:space="preserve">
-    <value>Exit Codes</value>
+    <value>关闭代码</value>
   </data>
   <data name="Command_GeneralError" xml:space="preserve">
-    <value>An unhandled exception has occurred.</value>
+    <value>发生了未处理的异常。</value>
   </data>
   <data name="Command_HelpOption" xml:space="preserve">
-    <value>Prints out the help menu.</value>
+    <value>打印输出帮助菜单。</value>
   </data>
   <data name="Command_LimitOutputOption" xml:space="preserve">
-    <value>Limit the output to essential information</value>
+    <value>将输出限制为基本信息</value>
   </data>
   <data name="Command_NotFoundError" xml:space="preserve">
     <value>Could not find a command registered that meets '{0}'. Try {1} -? for command reference/help.</value>
@@ -743,17 +742,17 @@ Normal:
 {1} = Is equal to chocolateyguicli</comment>
   </data>
   <data name="Command_OptionsAndSwitches" xml:space="preserve">
-    <value>Options and Switches</value>
+    <value>选件和开关</value>
   </data>
   <data name="Command_Usage" xml:space="preserve">
-    <value>Usage</value>
+    <value>使用</value>
   </data>
   <data name="ConfigCommand_ConfigNotFoundError" xml:space="preserve">
-    <value>Config '{0}' not found.</value>
+    <value>配置 '{0}' 找不到。</value>
     <comment>{0} = Is the name of the configuration parameter that can't be found.  Shown if the end user is trying to set a configuration parameter that doesn't exist.</comment>
   </data>
   <data name="ConfigCommand_Description" xml:space="preserve">
-    <value>Retrieve and configure Chocolatey GUI config settings</value>
+    <value>检索并配置Chocolatey GUI配置设置</value>
   </data>
   <data name="ConfigCommand_Help" xml:space="preserve">
     <value>Chocolatey GUI CLI will allow you to interact with the persisted configuration information.</value>
@@ -772,22 +771,22 @@ Normal:
     <value>The name of the config setting. Required with some actions. Defaults to empty.</value>
   </data>
   <data name="ConfigCommand_SingleConfigError" xml:space="preserve">
-    <value>A single config command must be listed. Please see the help menu for those commands</value>
+    <value>必须列出一个配置命令。有关这些命令请参阅帮助菜单</value>
   </data>
   <data name="ConfigCommand_Title" xml:space="preserve">
-    <value>Config Command</value>
+    <value>配置命令</value>
   </data>
   <data name="ConfigCommand_UnknownCommandError" xml:space="preserve">
-    <value>Unknown command '{0}'. Setting to '{1}'.</value>
+    <value>未知命令 '{0}'. 设置为 '{1}'.</value>
     <comment>{0} = The unknown subcommand that the user tried to pass in.  For example, if the user tried to run the command "chocolateyguicli config blah", here "blah" would be unrecognised, but rather than erroring the command, instead, the command "chocolateyguicli config list" will be executed.  i.e. the subcommand has been set to "list"
 {1} = Is equal to 'list'</comment>
   </data>
   <data name="ConfigCommand_Unset" xml:space="preserve">
-    <value>Unset {0}</value>
+    <value>未设置{0}</value>
     <comment>{0} = The name of the configuration parameter which has been unset</comment>
   </data>
   <data name="ConfigCommand_Updated" xml:space="preserve">
-    <value>Updated {0} = {1}</value>
+    <value>更新 {0} = {1}</value>
     <comment>{0} = The name of the configuration property that has just been changed
 {1} = The value that has just been set for the configuration property</comment>
   </data>
@@ -795,28 +794,28 @@ Normal:
     <value>The value of the config setting. Required with some actions. Defaults to empty.</value>
   </data>
   <data name="FeatureCommand_Description" xml:space="preserve">
-    <value>View and configure Chocolatey GUI features</value>
+    <value>查看并配置Chocolatey GUI功能</value>
   </data>
   <data name="FeatureCommand_Disabled" xml:space="preserve">
-    <value>Disabled</value>
+    <value>禁用</value>
   </data>
   <data name="FeatureCommand_DisabledWarning" xml:space="preserve">
-    <value>Disabled {0}</value>
+    <value>禁用 {0}</value>
     <comment>{0} = The name of the feature that has just been disabled.</comment>
   </data>
   <data name="FeatureCommand_Enabled" xml:space="preserve">
-    <value>Enabled</value>
+    <value>启用</value>
   </data>
   <data name="FeatureCommand_EnabledWarning" xml:space="preserve">
-    <value>Enabled {0}</value>
+    <value>启用 {0}</value>
     <comment>{0} = The name of the feature that has just been enabled.</comment>
   </data>
   <data name="FeatureCommand_FeatureNotFoundError" xml:space="preserve">
-    <value>Feature '{0}' not found</value>
+    <value>找不到功能 '{0}'</value>
     <comment>{0} = The name of the feature that couldn't be found.  i.e. the user has attempted to get or set a feature with a name that doesn't exist.</comment>
   </data>
   <data name="FeatureCommand_Help" xml:space="preserve">
-    <value>Chocolatey GUI will allow you to interact with features.</value>
+    <value>Chocolatey GUI 将允许您与功能进行交互。</value>
   </data>
   <data name="FeatureCommand_MissingNameOptionError" xml:space="preserve">
     <value>When specifying the subcommand '{0}', you must also specify {1}.</value>
@@ -824,139 +823,139 @@ Normal:
 {1} = Is equal to --name</comment>
   </data>
   <data name="FeatureCommand_NameOption" xml:space="preserve">
-    <value>The name of the feature. Defaults to empty.</value>
+    <value>该功能的名称。默认为空。</value>
   </data>
   <data name="FeatureCommand_NoChangeMessage" xml:space="preserve">
-    <value>Nothing to change. Config already set.</value>
+    <value>没有什么改变。配置已经设置。</value>
   </data>
   <data name="FeatureCommand_SingleFeatureError" xml:space="preserve">
-    <value>A single feature command must be listed. Please see the help menu for those commands.</value>
+    <value>必须列出一个功能命令。有关这些命令请参阅帮助菜单。</value>
   </data>
   <data name="FeatureCommand_Title" xml:space="preserve">
-    <value>Feature Command</value>
+    <value>功能命令</value>
   </data>
   <data name="FeatureCommand_UnknownCommandError" xml:space="preserve">
-    <value>Unknown command '{0}'. Setting to '{1}'.</value>
+    <value>未知命令 '{0}'. 设置为 '{1}'.</value>
     <comment>{0} = The unknown subcommand that the user tried to pass in.  For example, if the user tried to run the command "chocolateyguicli config blah", here "blah" would be unrecognised, but rather than erroring the command, instead, the command "chocolateyguicli config list" will be executed.  i.e. the subcommand has been set to "list"
 {1} = Is equal to 'list'</comment>
   </data>
   <data name="SettingsView_ConfigOutdatedPackagesCacheDurationInMinutesDescription" xml:space="preserve">
-    <value>Default timeout for outdated packages to be cached.  Default is 60 minutes.</value>
+    <value>缓存的过期包默认超时。默认为60分钟。</value>
   </data>
   <data name="Command_FeaturesTitle" xml:space="preserve">
-    <value>Features</value>
+    <value>特征</value>
   </data>
   <data name="Command_SettingsTitle" xml:space="preserve">
-    <value>Settings</value>
+    <value>设置</value>
   </data>
   <data name="Command_UseFeatureCommandNote" xml:space="preserve">
-    <value>NOTE: Use {0} to interact with features</value>
+    <value>注: {0}用于与功能交互</value>
     <comment>{0} = Is equal to "chocolateyguicli feature"</comment>
   </data>
   <data name="SettingsViewModel_InvalidSourceId" xml:space="preserve">
-    <value>chocolatey.licensed is a reserved source id and cannot be used for a new source</value>
+    <value>chocolatey.licensed 是保留的源 id, 不能用于新的源</value>
   </data>
   <data name="SettingsViewModel_SetSourceCertificateAndPasswordMessage" xml:space="preserve">
-    <value>NOTE: To remove the Certificate and Password, simply empty both input fields and click Save</value>
+    <value>注意:要删除证书和密码，只需清空两个输入字段，然后单击保存</value>
   </data>
   <data name="SettingsViewModel_SetSourceCertificateAndPasswordPasswordWatermark" xml:space="preserve">
-    <value>Certificate Password...</value>
+    <value>证书密码...</value>
   </data>
   <data name="SettingsViewModel_SetSourceCertificateAndPasswordTitle" xml:space="preserve">
-    <value>Set Source Certificate and Password</value>
+    <value>设置源证书和密码</value>
   </data>
   <data name="SettingsViewModel_SetSourceCertificateAndPasswordUsernameWatermark" xml:space="preserve">
-    <value>Certificate...</value>
+    <value>证书</value>
   </data>
   <data name="SettingsViewModel_SetSourceUsernameAndPasswordMessage" xml:space="preserve">
-    <value>NOTE: To remove the Username and Password, simply empty both input fields and click Save</value>
+    <value>注意:要删除用户名和密码，只需清空两个输入字段，然后单击保存</value>
   </data>
   <data name="SettingsViewModel_SetSourceUsernameAndPasswordTitle" xml:space="preserve">
-    <value>Set Source Username and Password</value>
+    <value>设置源用户名和密码</value>
   </data>
   <data name="SettingsView_ButtonSetCertificateAndPassword" xml:space="preserve">
-    <value>Set Certificate and Password</value>
+    <value>设置证书和密码</value>
   </data>
   <data name="SettingsView_ButtonSetUsernameAndPassword" xml:space="preserve">
-    <value>Set Username and Password</value>
+    <value>设置用户名和密码</value>
   </data>
   <data name="SettingsView_ChocolateyLicensedSourceWarning" xml:space="preserve">
-    <value>* The only modification that can be made to chocolatey.licensed source is to enable/disable it.</value>
+    <value>* 唯一可以对 chocolatey.licensed 源进行修改的是禁用/启用它。</value>
   </data>
   <data name="Dialog_AreYouSureIconsMessage" xml:space="preserve">
-    <value>This action will delete all cached icons that appear on the Tile Views of Chocolatey GUI.  Are you sure you want to proceed (this action cannot be undone)?</value>
+    <value>此操作将删除出现在Chocolatey GUI平铺视图上的所有缓存图标。您确定要继续(此操作无法撤消)吗?</value>
   </data>
   <data name="Dialog_AreYouSureOutdatedPackagesMessage" xml:space="preserve">
-    <value>This action will delete the file containing the list of outdated packages for this computer.  Are you sure you want to proceed (this action cannot be undone)?</value>
+    <value>此操作将删除包含此计算机的过期包列表的文件。您确定要继续(此操作无法撤消)吗?</value>
   </data>
   <data name="Dialog_AreYouSureTitle" xml:space="preserve">
-    <value>Are you sure?</value>
+    <value>你确定吗?</value>
   </data>
   <data name="Dialog_No" xml:space="preserve">
-    <value>No</value>
+    <value>否</value>
   </data>
   <data name="Dialog_Yes" xml:space="preserve">
-    <value>Yes</value>
+    <value>是</value>
   </data>
   <data name="SettingsView_PurgeIconCache" xml:space="preserve">
-    <value>Purge Icons</value>
+    <value>清除图标</value>
   </data>
   <data name="SettingsView_PurgeOutdatedPackagesCache" xml:space="preserve">
-    <value>Purge Outdated Packages</value>
+    <value>清除过期的包</value>
   </data>
   <data name="PurgeCommand_Description" xml:space="preserve">
-    <value>Purge the Chocolatey GUI caches</value>
+    <value>清除Chocolatey GUI缓存</value>
   </data>
   <data name="PurgeCommand_Help" xml:space="preserve">
-    <value>Chocolatey GUI will allow you to interact with purging caches used in application.</value>
+    <value>Chocolatey GUI 将允许您与应用程序中使用的清除缓存进行交互。</value>
   </data>
   <data name="PurgeCommand_Title" xml:space="preserve">
-    <value>Purge Command</value>
+    <value>清除命令</value>
   </data>
   <data name="PurgeCommand_UnknownCommandError" xml:space="preserve">
-    <value>Unknown command '{0}'. Valid values are {1} and {2}.</value>
+    <value>未知的命令 '{0}'。有效值是{1} 和{2}。</value>
     <comment>{0} = The name of the unknown command that was passed by the user
 {1} = Is equal to "icons"
 {2} = Is equal to "outdated"</comment>
   </data>
   <data name="LocalSourceView_Grid_Id" xml:space="preserve">
-    <value>Id</value>
+    <value>标识</value>
   </data>
   <data name="LocalSourceView_Grid_Prerelease" xml:space="preserve">
-    <value>Prerelease</value>
+    <value>预览版</value>
   </data>
   <data name="SettingsView_ToggleShowAdditionalPackageInformationDescription" xml:space="preserve">
-    <value>Show additional package information on Local and Remote views.</value>
+    <value>显示关于本地和远程视图的附加包信息。</value>
   </data>
   <data name="RemoteSourceView_Prerelease" xml:space="preserve">
-    <value>Prerelease</value>
+    <value>预览版</value>
   </data>
   <data name="PackagesView_Installed" xml:space="preserve">
-    <value>Installed</value>
+    <value>安装</value>
   </data>
   <data name="PackagesView_Outdated" xml:space="preserve">
-    <value>Outdated</value>
+    <value>过时</value>
   </data>
   <data name="PackagesView_Pinned" xml:space="preserve">
-    <value>Pinned</value>
+    <value>锁定</value>
   </data>
   <data name="PackagesView_Prerelease" xml:space="preserve">
-    <value>Prerelease</value>
+    <value>预览版</value>
   </data>
   <data name="SettingsView_ToggleAllowNonAdminAccessToSettingsDescription" xml:space="preserve">
     <value>Controls whether or not a non-administrator user can access the Settings Screen.  NOTE: This feature will only work with Chocolatey for Business and the Chocolatey GUI licensed extension installed.</value>
   </data>
   <data name="Error_DatabaseAccessCli" xml:space="preserve">
-    <value>Unable to access Chocolatey GUI Configuration Database.  This typically happens when Chocolatey GUI is already running.  Please close all instances of the application, and try running the command again.</value>
+    <value>无法访问Chocolatey GUI配置数据库。 通常在Chocolatey GUI或Chocolatey GUI CLI已经运行时会发生这种情况。 请关闭该应用程序的所有实例，然后尝试再次运行该命令。</value>
   </data>
   <data name="Error_DatabaseAccessGui" xml:space="preserve">
-    <value>Unable to access Chocolatey GUI Configuration Database.  This typically happens when Chocolatey GUI or Chocolatey GUI CLI is already running.  Please close all instances of the application, and try running it again.</value>
+    <value>无法访问Chocolatey GUI配置数据库。 通常在Chocolatey GUI或Chocolatey GUI CLI已经运行时会发生这种情况。 请关闭该应用程序的所有实例，然后尝试再次运行它。</value>
   </data>
   <data name="SettingsView_ToggleUseKeyboardBindings" xml:space="preserve">
-    <value>Allows keyboard bindings to be used to interact with different areas of the Chocolatey GUI User Interface.</value>
+    <value>允许使用键盘绑定到与所述Chocolatey GUI用户界面的不同区域进行交互。</value>
   </data>
   <data name="SettingsView_TogglePackageDownloadCountDescription" xml:space="preserve">
-    <value>Allows control over whether package download count is displayed on remote source views.</value>
+    <value>可以控制是否显示包下载次数在远程数据源视图。</value>
   </data>
   <data name="RemoteSourceView_PreventPreloadHeading" xml:space="preserve">
     <value>The Prevent Preload feature is currently enabled.</value>
@@ -995,7 +994,7 @@ Normal:
     <value>Exiting</value>
   </data>
   <data name="Application_UnhandledException" xml:space="preserve">
-    <value>Unhandled Exception</value>
+    <value>未处理的异常</value>
   </data>
   <data name="Application_ContainerError" xml:space="preserve">
     <value>Could not locate any instances of contract {0}</value>
@@ -1083,10 +1082,10 @@ Please contact your System Administrator to enable this operation.</value>
     <value>Should package parameters be applied to dependent packages?</value>
   </data>
   <data name="AdvancedChocolateyDialog_Buttons_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="AdvancedChocolateyDialog_Buttons_Install" xml:space="preserve">
-    <value>Install</value>
+    <value>安装</value>
   </data>
   <data name="AdvancedChocolateyDialog_ChecksumOptions_Header" xml:space="preserve">
     <value>Checksum Options</value>
@@ -1167,10 +1166,10 @@ Please contact your System Administrator to enable this operation.</value>
     <value>Do not install this silently.</value>
   </data>
   <data name="AdvancedChocolateyDialog_Off" xml:space="preserve">
-    <value>Off</value>
+    <value>关</value>
   </data>
   <data name="AdvancedChocolateyDialog_On" xml:space="preserve">
-    <value>On</value>
+    <value>开</value>
   </data>
   <data name="AdvancedChocolateyDialog_OverrideArguments_Header" xml:space="preserve">
     <value>Override Arguments</value>
@@ -1206,7 +1205,7 @@ Please contact your System Administrator to enable this operation.</value>
     <value>Install Options</value>
   </data>
   <data name="AdvancedChocolateyDialog_Version_Header" xml:space="preserve">
-    <value>Version</value>
+    <value>版本</value>
   </data>
   <data name="AdvancedChocolateyDialog_Version_ToolTip" xml:space="preserve">
     <value>A specific version to install</value>
@@ -1261,7 +1260,7 @@ Please contact your System Administrator to enable this operation.</value>
     <value>Go to the Last Page</value>
   </data>
   <data name="ChocolateyGUI_AllowNonAdminAccessToSettingsTitle" xml:space="preserve">
-    <value>Allow Non Admin Access to Settings</value>
+    <value>允许非管理员访问设置</value>
   </data>
   <data name="ChocolateyGUI_DefaultSourceNameTitle" xml:space="preserve">
     <value>Default Source Name</value>
@@ -1306,7 +1305,7 @@ Please contact your System Administrator to enable this operation.</value>
     <value>Show Additional Package Information</value>
   </data>
   <data name="ChocolateyGUI_ShowConsoleOutputTitle" xml:space="preserve">
-    <value>Show Console Output</value>
+    <value>显示控制台输出</value>
   </data>
   <data name="ChocolateyGUI_UseKeyboardBindingsTitle" xml:space="preserve">
     <value>Use Keyboard Bindings</value>
@@ -1329,7 +1328,7 @@ Please contact your System Administrator to enable this operation.</value>
     <comment>{0} = The Title of the Feature</comment>
   </data>
   <data name="ChocolateyGUI_UseDelayedSearchTitle" xml:space="preserve">
-    <value>Use Delayed Search</value>
+    <value>使用延迟搜索</value>
   </data>
   <data name="Application_PackageArgumentsError" xml:space="preserve">
     <value>There as an error attempting to read the contents of the .arguments file for version {0} of package '{1}'.  See log file for more information.</value>
@@ -1365,7 +1364,7 @@ Please contact your System Administrator to enable this operation.</value>
     <value>Text Files</value>
   </data>
   <data name="AdvancedChocolateyDialog_LatestVersion" xml:space="preserve">
-    <value>Latest Version</value>
+    <value>最新版本</value>
   </data>
   <data name="AdvancedChocolateyDialog_CacheLocation_Header" xml:space="preserve">
     <value>Cache Location</value>
