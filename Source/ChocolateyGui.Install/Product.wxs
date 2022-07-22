@@ -8,7 +8,7 @@
   <?define Language="1033" ?>
   <?define Manufacturer="Chocolatey"?>
 
-  <Product Id="*" Name="$(var.ProductName)" Language="$(var.Language)" Version="$(var.Version)" Manufacturer="$(var.Manufacturer)" UpgradeCode="f8164f91-fa5c-4789-b68d-9beb5b146155">
+  <Product Id="*" Codepage="936" Name="$(var.ProductName)" Language="$(var.Language)" Version="$(var.Version)" Manufacturer="$(var.Manufacturer)" UpgradeCode="f8164f91-fa5c-4789-b68d-9beb5b146155">
     <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
 
     <PropertyRef Id="WIX_IS_NETFRAMEWORK_48_OR_LATER_INSTALLED" />
@@ -57,7 +57,7 @@
       <Directory Id="ProgramMenuFolder">
         <Component Id="ApplicationShortcut" Guid="A508A8D8-4F82-4AA9-AB70-E1022B9A9EAC">
           <Shortcut Id="ApplicationStartMenuShortcut" Advertise="no"
-                    Name="Chocolatey GUI"
+                    Name="银河软件仓库"
                     Description="GUI for Chocolatey"
                     Target="[INSTALLFOLDER]ChocolateyGui.exe"
                     WorkingDirectory="INSTALLFOLDER"
