@@ -202,7 +202,14 @@
                             </Grid>
                         </mah:MetroHeader>
                         <mah:MetroHeader Header="{lang:Localize AdvancedChocolateyDialog_PackageParameters_Header}" Tag="{lang:Localize AdvancedChocolateyDialog_PackageParameters_ToolTip}">
-                            <TextBox Text="{Binding PackageParameters, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding SkipPowerShell, Converter={StaticResource BooleanInverter}}" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0" Text="{Binding PackageParameters, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding SkipPowerShell, Converter={StaticResource BooleanInverter}}" />
+                                <Button Grid.Column="1" Content="{lang:Localize AdvancedChocolateyDialog_Browse}" Command="{Binding BrowsePackageParametersCommand}" />
+                            </Grid>
                         </mah:MetroHeader>
                         <mah:MetroHeader Background="{DynamicResource MahApps.Brushes.Gray10}" Header="{lang:Localize AdvancedChocolateyDialog_InstallArguments_Header}" Tag="{lang:Localize AdvancedChocolateyDialog_InstallArguments_ToolTip}">
                             <TextBox Text="{Binding InstallArguments, UpdateSourceTrigger=PropertyChanged}">

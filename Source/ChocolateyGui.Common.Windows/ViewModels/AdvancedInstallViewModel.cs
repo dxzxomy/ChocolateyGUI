@@ -10,14 +10,18 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Input;
 using chocolatey;
 using ChocolateyGui.Common.Base;
+using ChocolateyGui.Common.Models;
 using ChocolateyGui.Common.Properties;
 using ChocolateyGui.Common.Services;
+using ChocolateyGui.Common.ViewModels.Items;
 using ChocolateyGui.Common.Windows.Commands;
 using ChocolateyGui.Common.Windows.Controls.Dialogs;
 using ChocolateyGui.Common.Windows.Utilities;
+using ChocolateyGui.Common.Windows.ViewModels.Items;
 using NuGet;
 
 namespace ChocolateyGui.Common.Windows.ViewModels
@@ -56,11 +60,13 @@ namespace ChocolateyGui.Common.Windows.ViewModels
         private string _downloadChecksumType64bit;
         private List<string> _availableChecksumTypes;
         private string _packageVersion;
+        private string _id;
 
         public AdvancedInstallViewModel(
             IChocolateyService chocolateyService,
             IPersistenceService persistenceService,
-            SemanticVersion packageVersion)
+            SemanticVersion packageVersion,
+            string id)
         {
             _chocolateyService = chocolateyService;
             _persistenceService = persistenceService;
@@ -68,6 +74,8 @@ namespace ChocolateyGui.Common.Windows.ViewModels
             _cts = new CancellationTokenSource();
 
             _packageVersion = packageVersion.ToString();
+            _id = id.ToString();
+
             SelectedVersion = _packageVersion;
 
             FetchAvailableVersions();
@@ -85,8 +93,8 @@ namespace ChocolateyGui.Common.Windows.ViewModels
                 o => true);
 
             BrowseLogFileCommand = new RelayCommand(BrowseLogFile);
+            BrowsePackageParametersCommand = new RelayCommand(BrowsePackageParameters);
             BrowseCacheLocationCommand = new RelayCommand(BrowseCacheLocation);
-
             SetDefaults();
         }
 
@@ -407,6 +415,8 @@ namespace ChocolateyGui.Common.Windows.ViewModels
 
         public ICommand BrowseCacheLocationCommand { get; }
 
+        public ICommand BrowsePackageParametersCommand { get; }
+
         /// <inheritdoc />
         public Action<AdvancedInstallViewModel> Close { get; set; }
 
@@ -430,6 +440,7 @@ namespace ChocolateyGui.Common.Windows.ViewModels
             var config = choco.GetConfiguration();
             DownloadChecksumType = "md5";
             DownloadChecksumType64bit = "md5";
+            PackageParameters = "installdir=d:\\\\{0}".format_with(_id);
             ExecutionTimeoutInSeconds = config.CommandExecutionTimeoutSeconds;
             CacheLocation = config.CacheLocation;
             LogFile = config.AdditionalLogFileLocation;
@@ -468,6 +479,25 @@ namespace ChocolateyGui.Common.Windows.ViewModels
             if (!string.IsNullOrEmpty(cacheDirectory))
             {
                 CacheLocation = cacheDirectory;
+            }
+        }
+
+        private void BrowsePackageParameters(object value)
+        {
+            var description = L(nameof(Resources.AdvancedChocolateyDialog_CacheLocation_BrowseDescription));
+            string packageDirectory = _persistenceService.GetFolderPath(PackageParameters, description);
+            MessageBox.Show($"{packageDirectory}");
+            if (!string.IsNullOrEmpty(packageDirectory))
+            {
+                PackageParameters = "installdir=" + $"{packageDirectory}\\{_id}";
+                if (packageDirectory.Substring(packageDirectory.Length - 1, 1) == @"\")
+                {
+                    PackageParameters = "installdir=" + $"{packageDirectory}\\{_id}";
+                }
+                else
+                {
+                    PackageParameters = "installdir=" + $"{packageDirectory.Replace(@"\", @"\\").Trim()}\\\\{_id}";
+                }
             }
         }
     }

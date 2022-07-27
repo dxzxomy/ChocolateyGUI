@@ -1178,7 +1178,7 @@ Please contact your System Administrator to enable this operation.</value>
     <value>Should install arguments be used exclusively without appending to current package passed arguments?</value>
   </data>
   <data name="AdvancedChocolateyDialog_PackageParameters_Header" xml:space="preserve">
-    <value>Package Parameters</value>
+    <value>包参数(安装路径)</value>
   </data>
   <data name="AdvancedChocolateyDialog_PackageParameters_ToolTip" xml:space="preserve">
     <value>Parameters to pass to the package</value>
@@ -1311,7 +1311,7 @@ Please contact your System Administrator to enable this operation.</value>
     <value>Use Keyboard Bindings</value>
   </data>
   <data name="PackageView_InstallAdvanced" xml:space="preserve">
-    <value>Install Advanced</value>
+    <value>自定义安装</value>
   </data>
   <data name="ChocolateyGUI_HidePackageDownloadCountTitle" xml:space="preserve">
     <value>Hide Package Download Count</value>
@@ -1376,7 +1376,7 @@ Please contact your System Administrator to enable this operation.</value>
     <value>The location to store any files downloaded by package during installations or upgrades.</value>
   </data>
   <data name="AdvancedChocolateyDialog_Browse" xml:space="preserve">
-    <value>Browse</value>
+    <value>选择目录</value>
     <comment>This text is used for both when a user clicks a button supposed to select a file, and when selecting a folder.</comment>
   </data>
 </root>

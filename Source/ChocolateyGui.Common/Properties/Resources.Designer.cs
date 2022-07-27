@@ -9,9 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace ChocolateyGui.Common.Properties {
-    using System;
-    
-    
+    using System;    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -569,7 +567,9 @@ namespace ChocolateyGui.Common.Properties {
         /// </summary>
         public static string AdvancedChocolateyDialog_PackageParameters_Header {
             get {
-                return ResourceManager.GetString("AdvancedChocolateyDialog_PackageParameters_Header", resourceCulture);
+                string path = ResourceManager.GetString("AdvancedChocolateyDialog_PackageParameters_Header", resourceCulture);
+                string trim = path.Replace("/", "\\\\").Trim();
+                return "installdir=" + trim;
             }
         }
         

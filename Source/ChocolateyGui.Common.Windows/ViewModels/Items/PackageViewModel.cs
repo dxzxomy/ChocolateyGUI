@@ -454,7 +454,7 @@ namespace ChocolateyGui.Common.Windows.ViewModels.Items
 
         public async Task InstallAdvanced()
         {
-            var dataContext = new AdvancedInstallViewModel(_chocolateyService, _persistenceService, Version);
+            var dataContext = new AdvancedInstallViewModel(_chocolateyService, _persistenceService, Version, Id);
 
             var result = await _dialogService.ShowChildWindowAsync<AdvancedInstallViewModel, AdvancedInstallViewModel>(
                 L(nameof(Resources.AdvancedChocolateyDialog_Title_Install)),
