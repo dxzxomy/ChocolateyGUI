@@ -599,9 +599,11 @@ namespace ChocolateyGui.Common.Windows.ViewModels
                         .Subscribe();
 
             var chocolateySettings = await _chocolateyService.GetSettings();
+
             foreach (var chocolateySetting in chocolateySettings)
             {
 #if !DEBUG // We hide this during DEBUG as it is a dark feature
+
                 var descriptionKey = "Chocolatey_" + chocolateySetting.Key + "Description";
 
                 var newDescription = _translationSource[descriptionKey];
@@ -614,6 +616,7 @@ namespace ChocolateyGui.Common.Windows.ViewModels
 
                 if (!string.IsNullOrEmpty(newDescription))
                 {
+                    MessageBox.Show($"newpt2 {newDescription}");
                     chocolateySetting.Description = newDescription;
                     _translationSource.PropertyChanged += (s, e) =>
                     {
@@ -641,7 +644,6 @@ namespace ChocolateyGui.Common.Windows.ViewModels
 #endif
 
                 var newDescription = _translationSource[descriptionKey];
-
                 if (string.IsNullOrEmpty(newDescription))
                 {
                     descriptionKey = chocolateyGuiFeature.Description;

@@ -72,18 +72,6 @@
                     <StackPanel Orientation="Horizontal"
                                 IsEnabled="{Binding IsInstallAllowed}"
                                 Visibility="{Binding IsInstalled, Converter={StaticResource BooleanToVisibility}, ConverterParameter=True}">
-                        <Button Padding="10" Margin="5 0"
-                            Command="{commands:DataContextCommandAdapter InstallAdvanced}">
-                            <i:Interaction.Behaviors>
-                                <utilities:ToolTipBehavior EnabledToolTip="{lang:Localize Application_OperationInstall}"
-                                                           IsFeatureEnabled="{Binding IsInstallAllowed, Mode=OneWay}"
-                                                           DisabledFeatureToolTip="{lang:Localize Application_OperationNotAllowed}" />
-                            </i:Interaction.Behaviors>
-                            <StackPanel Orientation="Horizontal">
-                                <iconPacks:PackIconEntypo Kind="Install" Margin="0 0 5 0 " VerticalAlignment="Center" />
-                                <TextBlock Text="{lang:Localize PackageView_InstallAdvanced}" FontSize="16"/>
-                            </StackPanel>
-                        </Button>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"
                                 IsEnabled="{Binding IsInstallAllowed}"
@@ -103,34 +91,6 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"
                                 Visibility="{Binding IsInstalled, Converter={StaticResource BooleanToVisibility}}">
-                        <Button Padding="10" Margin="5 0"
-                                Command="{commands:DataContextCommandAdapter Pin}"
-                                IsEnabled="{Binding IsPinAllowed}"
-                                Visibility="{Binding CanPin, Converter={StaticResource BooleanToVisibility}}">
-                            <i:Interaction.Behaviors>
-                                <utilities:ToolTipBehavior EnabledToolTip="{lang:Localize Application_OperationPin}"
-                                                           IsFeatureEnabled="{Binding IsPinAllowed, Mode=OneWay}"
-                                                           DisabledFeatureToolTip="{lang:Localize Application_OperationNotAllowed}" />
-                            </i:Interaction.Behaviors>
-                            <StackPanel Orientation="Horizontal">
-                                <iconPacks:PackIconModern Kind="Pin" Margin="0 0 5 0 " VerticalAlignment="Center" />
-                                <TextBlock Text="{lang:Localize PackageView_ButtonPin}" FontSize="16"/>
-                            </StackPanel>
-                        </Button>
-                        <Button Padding="10" Margin="5 0"
-                                Command="{commands:DataContextCommandAdapter Unpin}"
-                                IsEnabled="{Binding IsUnpinAllowed}"
-                                Visibility="{Binding CanUnpin, Converter={StaticResource BooleanToVisibility}}">
-                            <i:Interaction.Behaviors>
-                                <utilities:ToolTipBehavior EnabledToolTip="{lang:Localize Application_OperationUnpin}"
-                                                           IsFeatureEnabled="{Binding IsUnpinAllowed, Mode=OneWay}"
-                                                           DisabledFeatureToolTip="{lang:Localize Application_OperationNotAllowed}" />
-                            </i:Interaction.Behaviors>
-                            <StackPanel Orientation="Horizontal">
-                                <iconPacks:PackIconModern Kind="PinRemove" Margin="0 0 5 0 " VerticalAlignment="Center" />
-                                <TextBlock Text="{lang:Localize PackageView_ButtonUnpin}" FontSize="16"/>
-                            </StackPanel>
-                        </Button>
                         <Button Padding="10" Margin="5 0"
                             Command="{commands:DataContextCommandAdapter Reinstall}"
                             IsEnabled="{Binding IsReinstallAllowed}"

@@ -393,14 +393,14 @@ namespace ChocolateyGui.Common.Windows.ViewModels
 
                 HasLoaded = true;
 
-                var chocoPackage = _packages.FirstOrDefault(p => p.Id.ToLower() == "chocolatey");
-                if (chocoPackage != null && chocoPackage.CanUpdate)
-                {
-                    await _dialogService.ShowMessageAsync(
-                            L(nameof(Resources.LocalSourceViewModel_Chocolatey)),
-                            L(nameof(Resources.LocalSourceViewModel_UpdateAvailableForChocolatey)))
-                        .ConfigureAwait(false);
-                }
+                // var chocoPackage = _packages.FirstOrDefault(p => p.Id.ToLower() == "chocolatey");
+                // if (chocoPackage != null && chocoPackage.CanUpdate)
+                // {
+                //     await _dialogService.ShowMessageAsync(
+                //             L(nameof(Resources.LocalSourceViewModel_Chocolatey)),
+                //             L(nameof(Resources.LocalSourceViewModel_UpdateAvailableForChocolatey)))
+                //         .ConfigureAwait(false);
+               //  }
             }
             catch (Exception ex)
             {

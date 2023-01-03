@@ -4,11 +4,11 @@
 //   Copyright 2014 - 2017 Rob Reynolds, the maintainers of Chocolatey, and RealDimensions Software, LLC
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-
 using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using AutoMapper;
 using Caliburn.Micro;
 using ChocolateyGui.Common.Base;
@@ -460,6 +460,8 @@ namespace ChocolateyGui.Common.Windows.ViewModels.Items
                 L(nameof(Resources.AdvancedChocolateyDialog_Title_Install)),
                 new AdvancedInstallView { DataContext = dataContext },
                 dataContext);
+
+            dataContext.PackageParameters = dataContext.PackageParameters.Replace(@"\", @"\\");
 
             // null means that the Cancel button was clicked
             if (result != null)

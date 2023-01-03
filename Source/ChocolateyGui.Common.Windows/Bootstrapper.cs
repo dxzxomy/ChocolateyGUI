@@ -133,7 +133,16 @@ namespace ChocolateyGui.Common.Windows
             }
             catch (Exception ex)
             {
-                var messageFormat = L(nameof(Resources.Fatal_Startup_Error_Formatted), ex.Message);
+                var messageFormat = "error";
+
+                if (ex.Message == "操作超时")
+                {
+                    messageFormat = "网络连接失败，请在公司内网使用";
+                }
+                else
+                {
+                    messageFormat = ex.Message;
+                }
 
                 ChocolateyMessageBox.Show(messageFormat);
                 Logger.Fatal(ex, L(nameof(Resources.Fatal_Startup_Error)));

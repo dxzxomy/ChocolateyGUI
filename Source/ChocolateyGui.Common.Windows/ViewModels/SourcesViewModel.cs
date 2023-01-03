@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Media;
 using Caliburn.Micro;
 using ChocolateyGui.Common.Models;
@@ -80,7 +81,6 @@ namespace ChocolateyGui.Common.Windows.ViewModels
         public virtual async Task LoadSources()
         {
             var oldItems = Items.Skip(1).Cast<ISourceViewModelBase>().ToList();
-
             var sources = await _packageService.GetSources();
             var vms = new List<ISourceViewModelBase>();
 
@@ -90,7 +90,7 @@ namespace ChocolateyGui.Common.Windows.ViewModels
                 vms.Add(new SourceSeparatorViewModel());
             }
 
-            foreach (var source in sources.Where(s => !s.Disabled).OrderBy(s => s.Priority))
+            foreach (var source in sources.Where(s => !s.Disabled && s.Id != "chocolatey" && !s.Id.Contains("yinhe-")).OrderBy(s => s.Priority))
             {
                 vms.Add(_remoteSourceVmFactory(source));
             }

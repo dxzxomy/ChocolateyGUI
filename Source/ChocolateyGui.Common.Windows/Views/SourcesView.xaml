@@ -43,10 +43,7 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <Image Grid.Row="2"
-                           Source="{Binding SecondaryApplicationImageSource}"
-                           Margin="0,15,0,15"
-                           Height="100" />
+                    
                     <TextBlock Grid.Row="3"
                                Text="{Binding DisplayVersion}"
                                Padding="5"/>

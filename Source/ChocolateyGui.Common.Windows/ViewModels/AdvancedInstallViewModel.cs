@@ -440,7 +440,7 @@ namespace ChocolateyGui.Common.Windows.ViewModels
             var config = choco.GetConfiguration();
             DownloadChecksumType = "md5";
             DownloadChecksumType64bit = "md5";
-            PackageParameters = "installdir=d:\\\\{0}".format_with(_id);
+            PackageParameters = @"installdir=c:\yinhe\apps\{0}".format_with(_id);
             ExecutionTimeoutInSeconds = config.CommandExecutionTimeoutSeconds;
             CacheLocation = config.CacheLocation;
             LogFile = config.AdditionalLogFileLocation;
@@ -486,17 +486,16 @@ namespace ChocolateyGui.Common.Windows.ViewModels
         {
             var description = L(nameof(Resources.AdvancedChocolateyDialog_CacheLocation_BrowseDescription));
             string packageDirectory = _persistenceService.GetFolderPath(PackageParameters, description);
-            MessageBox.Show($"{packageDirectory}");
             if (!string.IsNullOrEmpty(packageDirectory))
             {
-                PackageParameters = "installdir=" + $"{packageDirectory}\\{_id}";
+                // PackageParameters = "installdir=" + $"{packageDirectory}\\{_id}";
                 if (packageDirectory.Substring(packageDirectory.Length - 1, 1) == @"\")
                 {
-                    PackageParameters = "installdir=" + $"{packageDirectory}\\{_id}";
+                    PackageParameters = "installdir=" + $"{packageDirectory}";
                 }
                 else
                 {
-                    PackageParameters = "installdir=" + $"{packageDirectory.Replace(@"\", @"\\").Trim()}\\\\{_id}";
+                    PackageParameters = "installdir=" + $"{packageDirectory.Replace(@"\", @"\").Trim()}";
                 }
             }
         }

