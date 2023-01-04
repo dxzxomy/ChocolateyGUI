@@ -90,7 +90,7 @@ namespace ChocolateyGui.Common.Windows.ViewModels
                 vms.Add(new SourceSeparatorViewModel());
             }
 
-            foreach (var source in sources.Where(s => !s.Disabled && s.Id != "chocolatey" && !s.Id.Contains("yinhe-")).OrderBy(s => s.Priority))
+            foreach (var source in sources.Where(s => !s.Disabled && s.Id != "chocolatey" && !s.Id.Contains("yinhe-") && !s.Id.Contains(".")).OrderBy(s => s.Priority))
             {
                 vms.Add(_remoteSourceVmFactory(source));
             }

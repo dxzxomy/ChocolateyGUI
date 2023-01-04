@@ -488,6 +488,13 @@ namespace ChocolateyGui.Common.Windows.Services
             }
         }
 
+        public async Task<ChocolateyFeature[]> GetTeams()
+        {
+            var config = await GetConfigFile();
+            var features = config.Features.Select(_mapper.Map<ChocolateyFeature>);
+            return features.Where(t => t.Description.Contains("yinhe-teams")).ToArray();
+        }
+
         public async Task<ChocolateySetting[]> GetSettings()
         {
             var config = await GetConfigFile();
