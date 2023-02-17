@@ -30,7 +30,8 @@
                              Background="Transparent"
                              BorderBrush="Transparent"
                              Padding="5,0,-1,0"
-                             SelectedItem="{Binding ActiveItem}">
+                             SelectedItem="{Binding ActiveItem}"
+                             SelectionChanged="{Binding ClearOption}">
                         <ListBox.ItemContainerStyleSelector>
                             <viewModels:SourcesListBoxItemStyleSelector ListBoxItemContainerStyleKey="{StaticResource SourcesListBoxItemContainerStyle}"
                                                                         SeparatorContainerStyleKey="{StaticResource SourcesSeparatorContainerStyle}"/>

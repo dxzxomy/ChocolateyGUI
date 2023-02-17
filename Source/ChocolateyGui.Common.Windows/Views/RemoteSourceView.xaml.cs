@@ -8,6 +8,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using Caliburn.Micro;
@@ -32,7 +33,7 @@ namespace ChocolateyGui.Common.Windows.Views
 
             eventAggregator.Subscribe(this);
 
-            this.Loaded += RemoteSourceViewOnLoaded;
+             // this.Loaded += RemoteSourceViewOnLoaded;
         }
 
         public void Handle(ResetScrollPositionMessage message)
@@ -45,7 +46,13 @@ namespace ChocolateyGui.Common.Windows.Views
 
         private void RemoteSourceViewOnLoaded(object sender, RoutedEventArgs e)
         {
-            this.SearchTextBox.Focus();
+            if (SearchTextBox.Text == null || SearchTextBox.Text == string.Empty)
+            {
+                return;
+            }
+
+            this.SearchTextBox.Text = null;
+            this.SearchTeamsBox.SelectedValue = "所有软件";
         }
 
         private void Packages_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)

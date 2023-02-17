@@ -137,5 +137,10 @@ namespace ChocolateyGui.Common.Windows.ViewModels
                 return obj.Source.GetHashCode();
             }
         }
+
+        private bool ClearOption()
+        {
+            RemoteSourceViewModel remoteSource = new RemoteSourceViewModel();
+        }
     }
 }

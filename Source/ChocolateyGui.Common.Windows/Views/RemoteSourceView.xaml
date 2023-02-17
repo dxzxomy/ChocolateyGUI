@@ -335,7 +335,13 @@
                                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                                         <Grid Margin="{TemplateBinding Padding}"
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
-                                            <StackPanel x:Name="EmptySearchInfo" Visibility="Collapsed" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="29*"/>
+                                                <ColumnDefinition Width="106*"/>
+                                                <ColumnDefinition Width="53*"/>
+                                                <ColumnDefinition Width="1175*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel x:Name="EmptySearchInfo" Visibility="Collapsed" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Margin="494,349,681.333,348.333">
                                                 <iconPacks:PackIconOcticons Kind="Search" Width="72" Height="72" Foreground="{DynamicResource MahApps.Brushes.AccentBase}" HorizontalAlignment="Center" Margin="20" />
                                                 <TextBlock Text="{lang:Localize RemoteSourceView_SearchNoPackagesFound}"
                                                            HorizontalAlignment="Center"
@@ -416,33 +422,17 @@
                              mah:TextBoxHelper.ButtonCommand="{commands:DataContextCommandAdapter SearchForPackages, CanSearchForPackages}"
                              Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
                              Style="{DynamicResource MahApps.Styles.TextBox.Search}">
-                        <TextBox.InputBindings>
+                        <TextBox.InputBindings >
                             <KeyBinding Command="{commands:DataContextCommandAdapter SearchForPackages, CanSearchForPackages}"
                                         Key="Return" />
                         </TextBox.InputBindings>
                     </TextBox>
                 </StackPanel>
-                <CheckBox Name="AllVersionsCheckBox"
-                          Margin="5"
-                          Style="{StaticResource Chocolatey.Styles.CheckBox.SourceHeader}"
-                          Content="{lang:Localize RemoteSourceView_CheckboxAllVersions}"
-                          IsChecked="{Binding IncludeAllVersions}" />
-                <CheckBox Name="PrereleaseCheckBox"
-                          Margin="5"
-                          Style="{StaticResource Chocolatey.Styles.CheckBox.SourceHeader}"
-                          Content="{lang:Localize RemoteSourceView_CheckboxIncludePrerelease}"
-                          IsChecked="{Binding IncludePrerelease}" />
-                <CheckBox Name="MatchCheckBox"
-                          Margin="5"
-                          Style="{StaticResource Chocolatey.Styles.CheckBox.SourceHeader}"
-                          Content="{lang:Localize RemoteSourceView_CheckboxMatchExactly}"
-                          IsChecked="{Binding MatchWord}" />
-                <ComboBox Name="SortBox" Margin="5 1" ItemsSource="{Binding SortOptions}" SelectedValue="{Binding SortSelection}"/>
                 <StackPanel Orientation="Horizontal" Margin="0 0 5 0">
                     <Label Margin="5,0" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center"
                            Target="{Binding ElementName=SearchTeamsBox}" Content="{lang:Localize RemoteSourceView_CheckboxTeams}"/>
-                    <ComboBox x:Name="SearchTeamsBox" Margin="5 1" ItemsSource="{Binding SortOptions}" SelectedValue="{Binding SortSelection}"/>
-                </StackPanel>
+                    <ComboBox Name="SearchTeamsBox" Margin="5 1" ItemsSource="{Binding SortOptions}" SelectedValue="{Binding SortSelection}"/>
+                  </StackPanel>
             </WrapPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,6">
                 <Button Command="{commands:DataContextCommandAdapter CheckForOutdatedPackages, CanCheckForOutdatedPackages}"

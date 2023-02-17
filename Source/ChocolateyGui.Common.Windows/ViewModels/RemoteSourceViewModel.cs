@@ -4,10 +4,10 @@
 //   Copyright 2014 - 2017 Rob Reynolds, the maintainers of Chocolatey, and RealDimensions Software, LLC
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Reactive.Linq;
@@ -106,7 +106,7 @@ namespace ChocolateyGui.Common.Windows.ViewModels
 
             AddSortOptions();
 
-            SortSelection = L(nameof(Resources.RemoteSourceViewModel_SortSelectionPopularity));
+            SortSelection = "所有软件";
         }
 
         public bool HasLoaded
@@ -179,8 +179,15 @@ namespace ChocolateyGui.Common.Windows.ViewModels
 
         public string SearchQuery
         {
-            get { return _searchQuery; }
-            set { this.SetPropertyValue(ref _searchQuery, value); }
+            get
+            {
+                return _searchQuery;
+            }
+
+            set
+            {
+                this.SetPropertyValue(ref _searchQuery, value);
+            }
         }
 
         public ObservableCollection<string> SortOptions { get; } = new ObservableCollection<string>();
@@ -194,10 +201,19 @@ namespace ChocolateyGui.Common.Windows.ViewModels
 
             set
             {
-                _sortSelectionName = value == L(nameof(Resources.RemoteSourceViewModel_SortSelectionPopularity))
-                    ? "DownloadCount"
-                    : "Title";
-                this.SetPropertyValue(ref _sortSelection, value);
+                _sortSelectionName = "所有软件";
+                if (value == "所有软件")
+                {
+                    this.SetPropertyValue(ref _sortSelection, value);
+                    this.SearchQuery = null;
+                    this.SetPropertyValue(ref _searchQuery, null);
+                }
+                else
+                {
+                    this.SetPropertyValue(ref _sortSelection, null);
+                    this.SearchQuery = null;
+                    this.SetPropertyValue(ref _searchQuery, value);
+                }
             }
         }
 
@@ -311,7 +327,6 @@ namespace ChocolateyGui.Common.Windows.ViewModels
                                     MatchWord,
                                     Source.Value));
                     var installed = await _chocolateyPackageService.GetInstalledPackages();
-                    var outdated = await _chocolateyPackageService.GetOutdatedPackages(false, null, forceCheckForOutdatedPackages);
 
                     PageCount = (int)Math.Ceiling((double)result.TotalCount / (double)PageSize);
                     Packages.Clear();
@@ -321,10 +336,6 @@ namespace ChocolateyGui.Common.Windows.ViewModels
                         if (installed.Any(package => string.Equals(package.Id, p.Id, StringComparison.OrdinalIgnoreCase)))
                         {
                             p.IsInstalled = true;
-                        }
-                        if (outdated.Any(package => string.Equals(package.Id, p.Id, StringComparison.OrdinalIgnoreCase)))
-                        {
-                            p.IsLatestVersion = false;
                         }
 
                         Packages.Add(Mapper.Map<IPackageViewModel>(p));
@@ -405,7 +416,7 @@ namespace ChocolateyGui.Common.Windows.ViewModels
                         ShowAdditionalPackageInformation = appConfig.ShowAdditionalPackageInformation ?? false;
                     });
 
-                var immediateProperties = new[]
+                var immediatePropefrties = new[]
                 {
                     "IncludeAllVersions", "IncludePrerelease", "MatchWord", "SortSelection"
                 };
@@ -416,7 +427,7 @@ namespace ChocolateyGui.Common.Windows.ViewModels
                 }
 
                 Observable.FromEventPattern<PropertyChangedEventArgs>(this, "PropertyChanged")
-                    .Where(e => immediateProperties.Contains(e.EventArgs.PropertyName))
+                    .Where(e => immediatePropefrties.Contains(e.EventArgs.PropertyName))
                     .ObserveOnDispatcher()
 #pragma warning disable 4014
                     .Subscribe(e => LoadPackages(false));
@@ -453,30 +464,28 @@ namespace ChocolateyGui.Common.Windows.ViewModels
         {
             AddSortOptions();
 
-            SortSelection = _sortSelectionName == "DownloadCount"
-                ? L(nameof(Resources.RemoteSourceViewModel_SortSelectionPopularity))
-                : L(nameof(Resources.RemoteSourceViewModel_SortSelectionAtoZ));
+            SortSelection = "所有软件";
 
             RemoveOldSortOptions();
         }
 
         private void AddSortOptions()
         {
-            var downloadCount = L(nameof(Resources.RemoteSourceViewModel_SortSelectionPopularity));
-            var title = L(nameof(Resources.RemoteSourceViewModel_SortSelectionAtoZ));
-
-            var index = SortOptions.IndexOf(downloadCount);
-
-            if (index == -1)
+            DataSet ds = new DataSet();
+            ds.ReadXml(@"http://choco.yhroot.com/conf/teams.config");
+            SortOptions.Insert(0, "所有软件");
+            int count = 1;
+            foreach (System.Data.DataTable teams in ds.Tables)
             {
-                SortOptions.Insert(0, downloadCount);
-            }
+                foreach (System.Data.DataRow team in teams.Rows)
+                {
+                    if (team["enabled"].ToString() == "true")
+                    {
+                        SortOptions.Insert(count, team["name"].ToString());
+                    }
+                }
 
-            index = SortOptions.IndexOf(title);
-
-            if (index == -1)
-            {
-                SortOptions.Insert(1, title);
+                count += 1;
             }
         }
 

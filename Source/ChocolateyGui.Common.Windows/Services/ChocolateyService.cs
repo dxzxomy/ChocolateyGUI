@@ -462,6 +462,18 @@ namespace ChocolateyGui.Common.Windows.Services
             httpWebResponse.Close();
             byte[] conBytes = System.Text.Encoding.UTF8.GetBytes(responseContent);
             File.WriteAllBytes(@"C:\ProgramData\chocolatey\config\chocolatey.config", conBytes);
+            string teamUrl = @"http://choco.yhroot.com/conf/teams.config";
+            HttpWebRequest httpTeamRequest = (HttpWebRequest)HttpWebRequest.Create(teamUrl);
+            httpTeamRequest.Method = "GET";
+            httpTeamRequest.Timeout = 60 * 3;
+            HttpWebResponse httpTeamResponse = (HttpWebResponse)httpTeamRequest.GetResponse();
+            StreamReader teamReader = new StreamReader(httpTeamResponse.GetResponseStream(), Encoding.UTF8);
+            string responseTeamContent = teamReader.ReadToEnd();
+            teamReader.Close();
+            httpTeamResponse.Close();
+            byte[] teamBytes = System.Text.Encoding.UTF8.GetBytes(responseTeamContent);
+            File.WriteAllBytes(@"C:\ProgramData\chocolatey\config\teams.config", teamBytes);
+
             var config = await GetConfigFile();
             var features = config.Features.Select(_mapper.Map<ChocolateyFeature>);
             return features.OrderBy(f => f.Name).ToArray();
